@@ -6,6 +6,15 @@
 //  Copyright © 2017 RuidongDai. All rights reserved.
 //
 
+//TODO:
+// Error to manipulate
+// Invalid request (overfit)
+// Invalid release (not hold or insufficient holding)
+// Invalid destory (parent, silbing, non-presence)
+// Invalid create(same name, invalid priority)
+//
+// Change Scheduler
+// Add IO opeartions
 #include "Manager.hpp"
 #include <iostream>
 #include <vector>
@@ -61,21 +70,21 @@ void Manager::destory(std::string name){
     
 }
 
-Resource::RCB& Manager::getResource(int RID){
-    if(RID == 1)
+Resource::RCB& Manager::getResource(std::string RID){
+    if(RID == "R1")
         return R1.getRCB();
-    else if (RID == 2)
+    else if (RID == "R2")
         return R2.getRCB();
-    else if (RID == 3)
+    else if (RID == "R3")
         return R3.getRCB();
-    else if (RID == 4)
+    else if (RID == "R4")
         return R4.getRCB();
     // cannot meet
     else
         return R1.getRCB();
 }
 
-void Manager::request(int RID){
+void Manager::request(std::string RID){
     Resource::RCB& temp = getResource(RID);
     if(temp.Status == "free"){
         temp.Status = "Allocated";
@@ -91,7 +100,7 @@ void Manager::request(int RID){
     scheduler();
 }
 
-void Manager::request(int RID, int unit){
+void Manager::request(std::string RID, int unit){
     Resource::RCB& temp = getResource(RID);
     if(temp.remain_unit >= unit){
         if(temp.remain_unit == unit)
@@ -108,16 +117,17 @@ void Manager::request(int RID, int unit){
     scheduler();
 }
 
-void Manager::release(int RID){
+void Manager::release(std::string RID){
     
 }
 
-void Manager::release(int RID, int unit){
+void Manager::release(std::string RID, int unit){
     
 }
 
 void Manager::timeout(){
     RL.erase(std::find(RL.begin(), RL.end(), running));
+    running->getPCB().status.first = "ready";
     RL.push_back(running);
     scheduler();
 }
@@ -154,23 +164,23 @@ void Manager::shell(){
             create_proces(inputs[1], stoi(inputs[2]));
         }
         else if(inputs[0] == "req"){
-            int num = stoi(inputs[1]);
-            if(num >= 1 && num <= 4 && inputs.size() == 3)
-                request(num, stoi(inputs[2]));
-            else if(num >= 1 && num <= 4 && inputs.size() == 2)
-                request(num);
+            if(inputs.size() == 3)
+                request(inputs[1], stoi(inputs[2]));
+            else if(inputs.size() == 2)
+                request(inputs[1]);
         }
         else if(inputs[0] == "rel"){
-            int num = stoi(inputs[1]);
-            if(num >= 1 && num <= 4 && inputs.size() == 3)
-                release(num, stoi(inputs[2]));
-            else if(num >= 1 && num <= 4 && inputs.size() == 2)
-                release(num);        }
+            if(inputs.size() == 3)
+                release(inputs[1], stoi(inputs[2]));
+            else if(inputs.size() == 2)
+                release(inputs[1]);        }
         else if(inputs[0] == "to"){
             timeout();
         }
         else if(inputs[0] == "de"){
             destory(inputs[1]);
         }
+        else
+            throw invalid_manipulate_exception();
     }
 }

@@ -22,7 +22,7 @@ class Process{
         };
         creation_tree tree;
         std::string ID;
-        std::vector<std::pair<int, int>> other_resource;
+        std::vector<std::pair<std::string, int>> other_resource;
         std::pair<std::string, std::vector<Process*>*> status;
         int priority;
     };
@@ -34,9 +34,9 @@ class Process{
     PCB& getPCB();
     void destory();
     void printPID();
-    void request(int RID);
-    void request(int RID, int n);
-    void release(int RID);
+    void request(std::string RID);
+    void request(std::string RID, int n);
+    void release(std::string RID);
     ~Process();
 };
 

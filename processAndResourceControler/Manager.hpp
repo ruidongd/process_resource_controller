@@ -9,9 +9,15 @@
 #ifndef Manager_hpp
 #define Manager_hpp
 #include <sstream>
-
+#include <exception>
 #include "Resource.hpp"
 #include "Process.hpp"
+
+struct invalid_manipulate_exception : public std::exception{
+    virtual const char * what() const throw(){
+        return "error";
+    }
+};
 
 class Manager{
     std::vector<Process*> RL;
@@ -23,13 +29,13 @@ public:
     void shell();
     void scheduler();
     void create_proces(std::string name, int priority);
-    void request(int RID);
-    void request(int RID, int unit);
-    void release(int RID);
-    void release(int RID, int unit);
+    void request(std::string RID);
+    void request(std::string RID, int unit);
+    void release(std::string RID);
+    void release(std::string RID, int unit);
     void destory(std::string name);
     void timeout();
-    Resource::RCB& getResource(int RID);
+    Resource::RCB& getResource(std::string RID);
     ~Manager();
 };
 
