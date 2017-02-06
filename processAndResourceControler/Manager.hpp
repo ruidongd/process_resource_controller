@@ -8,11 +8,13 @@
 
 #ifndef Manager_hpp
 #define Manager_hpp
+#include <iostream>
+#include <vector>
+#include <string>
 #include <sstream>
+#include <fstream>
 #include <exception>
-#include "Resource.hpp"
 #include "Process.hpp"
-
 struct invalid_manipulate_exception : public std::exception{
     virtual const char * what() const throw(){
         return "error";
@@ -24,11 +26,12 @@ class Manager{
     void reset();
     Resource R1, R2, R3, R4;
     Process* running;
+    std::vector<std::string> names;
 public:
     Manager();
     void shell();
     void scheduler();
-    void create_proces(std::string name, int priority);
+    void create_process(std::string name, int priority);
     void request(std::string RID);
     void request(std::string RID, int unit);
     void release(std::string RID);

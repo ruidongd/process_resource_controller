@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "processAndResourceControler/Manager.cpp"
-            timestampString = "507860162.293938"
+            timestampString = "508049918.965086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "Manager::Manager()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "Manager::create_process(std::string name, int priority)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "processAndResourceControler/Manager.cpp"
+            timestampString = "508049918.965086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "Manager::create_process(std::string name, int priority)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

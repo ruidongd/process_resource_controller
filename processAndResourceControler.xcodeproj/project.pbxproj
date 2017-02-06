@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		4943B0211E36CBE6005F5A1A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4943B0201E36CBE6005F5A1A /* main.cpp */; };
 		4943B0291E36CBFE005F5A1A /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4943B0271E36CBFE005F5A1A /* Manager.cpp */; };
-		4943B02C1E36CC3A005F5A1A /* Process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4943B02A1E36CC3A005F5A1A /* Process.cpp */; };
-		49D994291E38533800CD16BF /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49D994271E38533800CD16BF /* Resource.cpp */; };
+		49D1CB601E47D5310024A9E8 /* Process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49D1CB5C1E47D5310024A9E8 /* Process.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,10 +29,8 @@
 		4943B0201E36CBE6005F5A1A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4943B0271E36CBFE005F5A1A /* Manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Manager.cpp; sourceTree = "<group>"; };
 		4943B0281E36CBFE005F5A1A /* Manager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Manager.hpp; sourceTree = "<group>"; };
-		4943B02A1E36CC3A005F5A1A /* Process.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Process.cpp; sourceTree = "<group>"; };
-		4943B02B1E36CC3A005F5A1A /* Process.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Process.hpp; sourceTree = "<group>"; };
-		49D994271E38533800CD16BF /* Resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resource.cpp; sourceTree = "<group>"; };
-		49D994281E38533800CD16BF /* Resource.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Resource.hpp; sourceTree = "<group>"; };
+		49D1CB5C1E47D5310024A9E8 /* Process.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Process.cpp; sourceTree = "<group>"; };
+		49D1CB5D1E47D5310024A9E8 /* Process.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Process.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +63,11 @@
 		4943B01F1E36CBE6005F5A1A /* processAndResourceControler */ = {
 			isa = PBXGroup;
 			children = (
+				49D1CB5C1E47D5310024A9E8 /* Process.cpp */,
+				49D1CB5D1E47D5310024A9E8 /* Process.hpp */,
 				4943B0201E36CBE6005F5A1A /* main.cpp */,
 				4943B0271E36CBFE005F5A1A /* Manager.cpp */,
 				4943B0281E36CBFE005F5A1A /* Manager.hpp */,
-				4943B02A1E36CC3A005F5A1A /* Process.cpp */,
-				4943B02B1E36CC3A005F5A1A /* Process.hpp */,
-				49D994271E38533800CD16BF /* Resource.cpp */,
-				49D994281E38533800CD16BF /* Resource.hpp */,
 			);
 			path = processAndResourceControler;
 			sourceTree = "<group>";
@@ -134,8 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4943B0211E36CBE6005F5A1A /* main.cpp in Sources */,
-				49D994291E38533800CD16BF /* Resource.cpp in Sources */,
-				4943B02C1E36CC3A005F5A1A /* Process.cpp in Sources */,
+				49D1CB601E47D5310024A9E8 /* Process.cpp in Sources */,
 				4943B0291E36CBFE005F5A1A /* Manager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
